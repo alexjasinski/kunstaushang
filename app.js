@@ -15,6 +15,8 @@ const hbs = require("hbs");
 const emoji = require("emojilib");
 
 const app = express();
+// use session here:                 V
+require('./config/session.config')(app);
 //making of passwords.
 // const bcrypt = require('bcryptjs');
 // const saltRounds = 10;
