@@ -8,23 +8,29 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
 
-  <nav>
-    <ul>
-      <li id="to-left">
-        <p><a href="/"> homepage </a></p>
-      </li>
-      <li id="to-right">
-        <a href="/signup">Signup</a>
-        <a href="/login">Login</a>
-        {{! !!! }}
-
-      </li>
-    </ul>
-  </nav>
 
   <body>
 
+    <header>
+      <h1>Kunst ist Leben </h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Upload</a></li>
+        <li><a href="#">Contact</a></li> 
+        <li><a href="/signup">Signup</a></li>
+        <li><a href="/login">Login</a></li>
+      </ul>
+    </nav>
+
     {{{body}}}
+
+    <footer>
+      <p>&copy; 2023 Kunstaushang Homepage. All rights reserved.</p>
+    </footer>
 
     <script src="/js/script.js"></script>
   </body>

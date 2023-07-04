@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Spring in Berlin",
+    "description": "Oil on canvas, 45.5x38cm, 2023",
+    "author": "Unknown",
+    "rating": "7/10"
+  },
+  {
+    "title": "Frog",
+    "description": "Oil on canvas, 45.5x38cm, 2023",
+    "author": "Jon Jon",
+    "rating": "2/10"
+  },
+  {
+    "title": "Air polution",
+    "description": "Oil on canvas, 65.5x38cm, 2023",
+    "author": "New user",
+    "rating": "5/10"
+  },
+  {
+    "title": "Earth polution",
+    "description": "Oil on canvas, 65.5x38cm, 2023",
+    "author": "New dude",
+    "rating": "5/10"
+  },
+  {
+    "title": "Air ride",
+    "description": "Oil on canvas, 65.5x38cm, 2023",
+    "author": "Nergal",
+    "rating": "6/10"
+  },
+  {
+    "title": "Hello world",
+    "description": "Oil on canvas, 65.5x38cm, 2023",
+    "author": "Jimmy Jim",
+    "rating": "7/10"
+  },
+  {
+    "title": "Nothing new",
+    "description": "Oil on canvas, 45.5x32cm, 2023",
+    "author": "Alessandro",
+    "rating": "3/10"
+  },
+  {
+    "title": "Fresco",
+    "description": "Oil on canvas, 55.5x38cm, 2023",
+    "author": "Best me",
+    "rating": "9/10"
+  }
+]
