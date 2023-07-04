@@ -1,3 +1,4 @@
+
 // models/picture.model.js
 
 const { Schema, model } = require("mongoose");
@@ -7,6 +8,7 @@ const pictureSchema = new Schema(
     title: String,
     description: String,
     location: String,
+    author: String,
     rating: Number,
   },
   {
@@ -14,4 +16,4 @@ const pictureSchema = new Schema(
   }
 );
 
-module.exports = model("picture", pictureSchema);
+module.exports = model("Picture", pictureSchema);

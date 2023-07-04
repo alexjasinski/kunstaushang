@@ -52,9 +52,15 @@ app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 
+
 // authRouter needs to be added so paste the following lines:
 const authRouter = require("./routes/auth.routes"); // <== has to be added
 app.use("/", authRouter); // <== has to be added
+
+const galleryRoutes = require("./routes/gallery.routes");
+app.use("/", galleryRoutes);
+
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
