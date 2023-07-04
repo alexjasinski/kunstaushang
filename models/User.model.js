@@ -6,24 +6,33 @@ const userSchema = new Schema(
     username: {
       type: String,
       trim: true,
-      required: false,
-      unique: true
+      required: [true, "Username is required."],
+      unique: true,
     },
     email: {
       type: String,
-      required: true,
+      required: [true, "Email is required."],
+      match: [/^\S+@\S+\.\S+$/, "Please use a valid email address."],
+
       unique: true,
       lowercase: true,
-      trim: true
+      trim: true,
     },
-    password: {
+
+    profilePhoto: {
       type: String,
-      required: true
-    }
+      required: false,
+    },
+    passwordHash: {
+      type: String,
+      required: [true, "Password is required."],
+    },
+
+    picture: [{ type: Schema.Types.ObjectId, pictureSchema: "Picture" }],
   },
   {
-    // this second object adds extra properties: `createdAt` and `updatedAt`    
-    timestamps: true
+    // this second object adds extra properties: `createdAt` and `updatedAt`
+    timestamps: true,
   }
 );
 
