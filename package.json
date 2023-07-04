@@ -7,12 +7,15 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.3.1",
+    "emojilib": "^3.0.10",
     "express": "^4.18.2",
     "hbs": "^4.2.0",
     "mongoose": "^7.3.1",
     "morgan": "^1.10.0",
+    "node-emoji": "^2.1.0",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
