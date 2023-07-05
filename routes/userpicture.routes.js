@@ -15,17 +15,20 @@ router.post(
   "/userpicture/create",
   fileUploader.single("userpicture"),
   (req, res) => {
-    const { id } = req.session._id;
+    console.log(req.session);
+    const id = req.session.currentUser._id;
     console.log("the id", id);
 
-    let imageUrl;
+    let profilePhoto;
     if (req.file) {
-      imageUrl = req.file.path;
+      profilePhoto = req.file.path;
     } else {
-      imageUrl = existingImage;
+      profilePhoto = existingImage;
     }
 
-    User.findByIdAndUpdate(id, { imageUrl }, { new: true })
+    console.log("the picture", profilePhoto);
+
+    User.findByIdAndUpdate(id, { profilePhoto: profilePhoto }, { new: true })
       .then(() => res.redirect(`/userprofile`))
       .catch((error) =>
         console.log(`Error while updating a single movie: ${error}`)
