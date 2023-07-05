@@ -1,20 +1,34 @@
 const router = require("express").Router();
-
-router.get("gallery", (req, res) => res.render("gallery.hbs"));
-
+const axios = require("axios");
 const Gallery = require("../models/Gallery.model.js");
 
-router.get("/gallery", (req, res, next) => {
-  Gallery.find()
-    .then((allThePicturesFromDB) => {
-      console.log("Retrieved gallery from DB:", allThePicturesFromDB);
-      res.render("gallery.hbs", { gallery: allThePicturesFromDB });
+const arr = [{ name: "abc" }, { name: "def" }];
+router.get("/gallery", (req, res) => {
+  const url = `https://api.unsplash.com/search/photos?page=3&query=tech`;
+  axios
+    .get(url, {
+      headers: {
+        Authorization: `Client-ID ${process.env.UNSPLASH_ACCESS}`,
+      },
     })
-    .catch((error) => {
-      console.log("Error while getting the art from the DB: ", error);
-      next(error);
-    });
+    .then((response) => {
+      // res.json(response.data);
+      res.render("gallery", { images: response.data.results });
+    })
+    .catch((error) => res.json(error));
 });
+
+// router.get("/gallery", (req, res, next) => {
+//   Gallery.find()
+//     .then((allThePicturesFromDB) => {
+//       console.log("Retrieved gallery from DB:", allThePicturesFromDB);
+//       res.render("gallery.hbs", { gallery: allThePicturesFromDB });
+//     })
+//     .catch((error) => {
+//       console.log("Error while getting the art from the DB: ", error);
+//       next(error);
+//     });
+// });
 
 router.get("/gallery/:pictureId", (req, res) => res.render("picture.hbs"));
 
