@@ -1,4 +1,5 @@
 // models/picture.model.js
+const mongoose = require("mongoose");
 
 const { Schema, model } = require("mongoose");
 
