@@ -1,25 +1,41 @@
-{{!-- views/books/book-create.hbs --}}
+{{! views/books/book-create.hbs }}
 
 <h2>Upload your image</h2>
+<div class="row">
+  <div class="col-md-6">
+    <form action="/picture/create" method="post" enctype="multipart/form-data">
+      {{! !!! }}
+      <div class="form-group">
+        <label>Title:
+          <input type="text" name="title" class="form-control" />
+        </label>
+      </div>
 
-<form action="/gallery/create" method="post">
-  <label> Title:
-    <input type="text" name="title" />
-  </label>
+      <div class="form-group">
+        <label>Description:
+          <textarea name="description" cols="30" rows="4" class="form-control">
+          </textarea>
+        </label>
+      </div>
 
-  <label> Author:
-    <input type="text" name="author" />
-  </label>
-
-  <label> Description:
-    <textarea name="description" cols="30" rows="4"> </textarea>
-  </label>
-
-  <label> Rating:
-    <input type="number" name="rating" min="1" max="10" />
-  </label>
-
-  
-
-  <button type="submit"> Create </button>
-</form>
+      <div class="form-group">
+        <label>Image:
+          <input type="file" name="picture" class="form-control-file" />
+        </label>
+      </div>
+      <div class="form-group">
+        <label>Location:
+          <textarea name="Location" cols="30" rows="4" class="form-control">
+          </textarea>
+        </label>
+      </div>
+      <div class="form-group">
+        <label>rating:
+          <textarea name="rating" cols="30" rows="4" class="form-control">
+          </textarea>
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+  </div>
+</div>

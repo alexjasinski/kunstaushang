@@ -54,6 +54,10 @@ router.post("/signup", (req, res, next) => {
 router.get("/login", (req, res) => {
   res.render("auth/login");
 });
+
+router.get("/movies/create", (req, res) =>
+  res.render("movie-views/movie-create")
+);
 // POST login route ==> to process form data
 router.post("/login", (req, res, next) => {
   const { email, password } = req.body;
@@ -77,6 +81,7 @@ router.post("/login", (req, res, next) => {
 
         //******* SAVE THE USER IN THE SESSION ********//
         req.session.currentUser = user;
+        console.log(user);
         res.redirect("/userProfile");
       } else {
         console.log("Incorrect password. ");
@@ -93,6 +98,7 @@ router.post("/login", (req, res, next) => {
 // nothing gets changed except the GET /userProfile route
 
 router.get("/userProfile", isLoggedIn, (req, res) => {
+  console.log(req.session.currentUser);
   res.render("users/user-profile", { userInSession: req.session.currentUser });
 });
 router.post("/logout", (req, res, next) => {

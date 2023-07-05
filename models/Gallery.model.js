@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+
 const { Schema, model } = require("mongoose");
 
 const gallerySchema = new Schema(
@@ -6,6 +8,8 @@ const gallerySchema = new Schema(
     description: String,
     author: String,
     rating: Number,
+    imageUrl: String
+
   },
   {
     timestamps: true,

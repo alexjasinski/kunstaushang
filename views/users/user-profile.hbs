@@ -1,16 +1,20 @@
-{{!-- views/users/user-profile.hbs --}}
+{{! views/users/user-profile.hbs }}
 
-{{!-- the new version, with the session: --}}
+{{! the new version, with the session: }}
 
 {{#if userInSession}}
-  <h2>Welcome, {{ userInSession.username }}!</h2>
-  <p>{{userInsession.profile_picture}}S</p>
+  <h2>Welcome, {{userInSession.username}}!</h2>
+  <img src="{{userInSession.profilePhoto}}" />
   <p>This is your profile page my friend!</p>
   <button>
+
     <a href="/userProfile">Reload the page</a>
   </button>
+
+  <a class="nav-link" href="/userpicture/create">add profile picture</a>
+
 {{else}}
-  
-  <br><p>Still no logged in user, sorry!</p>
+
+  <br /><p>Still no logged in user, sorry!</p>
 
 {{/if}}

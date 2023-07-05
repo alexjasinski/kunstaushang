@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+
 const { Schema, model } = require("mongoose");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
@@ -22,6 +24,9 @@ const userSchema = new Schema(
     profilePhoto: {
       type: String,
       required: false,
+      imageUrl: String,
+      default:
+        "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
     },
     passwordHash: {
       type: String,
