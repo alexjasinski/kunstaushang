@@ -61,6 +61,9 @@ app.use("/", authRouter); // <== has to be added
 const galleryRoutes = require("./routes/gallery.routes");
 app.use("/", galleryRoutes);
 
+const searchRoutes = require("./routes/search.routes");
+app.use("/", searchRoutes);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
