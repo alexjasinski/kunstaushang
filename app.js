@@ -21,7 +21,11 @@ app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 
-app.use("/", userpictureRouter); // <== has to be added
+
+// pictureRouter needs to be added so paste the following lines:
+const pictureRouter = require("./routes/picture.routes"); // <== has to be added
+app.use("/", pictureRouter); // <== has to be added
+
 
 const authRouter = require("./routes/auth.routes"); // <== has to be added
 app.use("/", authRouter); // <== has to be added
