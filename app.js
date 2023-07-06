@@ -15,8 +15,10 @@ const express = require("express");
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
 const emoji = require("emojilib");
-
+const userpictureRouter = require("./routes/userpicture.routes");
 const app = express();
+// use session here:                 V
+require("./config/session.config")(app);
 //making of passwords.
 // const bcrypt = require('bcryptjs');
 // const saltRounds = 10;
@@ -52,9 +54,11 @@ app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 
+
 // pictureRouter needs to be added so paste the following lines:
 const pictureRouter = require("./routes/picture.routes"); // <== has to be added
 app.use("/", pictureRouter); // <== has to be added
+
 
 // authRouter needs to be added so paste the following lines:
 const authRouter = require("./routes/auth.routes"); // <== has to be added
