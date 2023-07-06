@@ -1,9 +1,11 @@
 
 <h1>GALLERY</h1>
-<div>
+<div class="gallery">
   {{#each images}}
-    <img src="{{urls.small}}" alt="{{this.alt_description}}" />
+    <div>
+      <img src="{{urls.small}}" alt="{{this.alt_description}}" />
     <p>{{this.alt_description}}</p>
+    </div>
   {{/each}}
 </div>
 <div class="container">
