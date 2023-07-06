@@ -16,21 +16,43 @@
       <h1>Kunst ist Leben </h1>
 
     </header>
+    <nav><ul>
 
     <nav class="navbar">
 
       <ul>
         <li><a href="/">Home</a></li>
+        <li><a href="/userprofile">Profile</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Upload</a></li>
         <li><a href="#">Contact</a></li>
         <li><a href="/signup">Signup</a></li>
         <li><a href="/login">Login</a></li>
+
+        <li>
+          <a class="nav-link" href="/userpictures">User Pictures</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/gallery">Gallery</a>
+        </li>
+        <li><a href="/picture/create">Add Photos</a></li>
+        <li><a href="/logout">logout</a></li>
       </ul>
     </nav>
 
     {{{body}}}
 
+    <div class="slideshow-container">
+      <img class="slide" src="/public/images/slide/slide1.jpg" alt="Image 1" />
+      <img class="slide" src="/public/images/slide/slide2.jpg" alt="Image 2" />
+      <img class="slide" src="/public/images/slide/slide3.jpg" alt="Image 3" />
+      <img class="slide" src="/public/images/slide/slide4.jpg" alt="Image 4" />
+    </div>
+    <div class="sidebar" id="sidebar">
+      <!-- Sidebar content here -->
+    </div>
+    <div class="content">
+      <!-- Main content here -->
+    </div>
     <footer>
       <p>&copy; 2023 Kunstaushang Homepage. All rights reserved.</p>
     </footer>

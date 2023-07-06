@@ -1,4 +1,5 @@
 // models/picture.model.js
+const mongoose = require("mongoose");
 
 const { Schema, model } = require("mongoose");
 
@@ -8,7 +9,7 @@ const pictureSchema = new Schema(
     title: String,
     description: String,
     location: String,
-    author: { type: Schema.Types.ObjectId, userSchema: "User" },
+    author: String,
     rating: Number,
   },
   {
