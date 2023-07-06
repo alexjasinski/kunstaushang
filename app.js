@@ -5,6 +5,8 @@ require("dotenv").config();
 // ℹ️ Connects to the database
 require("./db");
 
+const path = require("path");
+
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express
 const express = require("express");
@@ -66,5 +68,20 @@ app.use("/", searchRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "views/index.html"));
+});
+
+app.get("/gallery", (req, res, next) => {
+  res.render("gallery");
+});
+
+app.get("/search", (req, res, next) => res.render("/partials/searchBar"));
+
+app.set("view engine", "hbs");
+app.set("views", path.join(__dirname, "views"));
+
+hbs.registerPartials(__dirname + "/views/partials");
 
 module.exports = app;

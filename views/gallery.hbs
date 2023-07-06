@@ -1,7 +1,13 @@
+
 <h1>GALLERY</h1>
 <div>
   {{#each images}}
     <img src="{{urls.small}}" alt="{{this.alt_description}}" />
     <p>{{this.alt_description}}</p>
   {{/each}}
+</div>
+<div class="container">
+  {{> searchBar}}
+
+
 </div>

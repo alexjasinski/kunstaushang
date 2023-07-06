@@ -2,7 +2,7 @@ const router = require("express").Router();
 const axios = require("axios");
 
 router.get("/search", function (req, res) {
-  res.render("search/search-image");
+  res.render("partials/search");
 });
 
 router.post("/search", function (req, res) {
