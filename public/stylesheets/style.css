@@ -83,6 +83,24 @@ p {
 .slide.active {
   opacity: 1;
 }
+.sidebar {
+  width: 200px; /* Adjust as needed */
+  background-color: red; /* Adjust sidebar color */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -200px; /* Hide the sidebar initially */
+  transition: left 0.3s ease;
+}
+
+.content {
+  margin-left: 0; /* Adjust based on sidebar width */
+  /* Additional styles for the main content area */
+}
+
+.show-sidebar {
+  left: 0; /* Show the sidebar */
+}
 
 footer {
   background-color: #333;
