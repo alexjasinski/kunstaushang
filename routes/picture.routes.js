@@ -68,10 +68,30 @@ router.post("/picture/:id/edit", fileUploader.single("picture"), (req, res) => {
     imageUrl = existingImage;
   }
 
-  Movie.findByIdAndUpdate(id, { title, description, imageUrl }, { new: true })
+  picture
+    .findByIdAndUpdate(id, { title, description, imageUrl }, { new: true })
     .then(() => res.redirect(`/picture`))
     .catch((error) =>
       console.log(`Error while updating a single picture: ${error}`)
     );
 });
+router.get("/picture/:pictureId/edit", (req, res, next) => {
+  const { pictureId } = req.params;
+
+  picture
+    .findById(pictureId)
+    .then((pictureToEdit) => {
+      // console.log(pictureToEdit);
+      res.render("picture/picture-edit.hbs", { picture: pictureToEdit }); // <-- add this line
+    })
+    .catch((error) => next(error));
+});
+router.post("/picture/:pictureId/delete", (req, res, next) => {
+  const { pictureId } = req.params;
+
+  Book.findByIdAndDelete(pictureId)
+    .then(() => res.redirect("/pictureId"))
+    .catch((error) => next(error));
+});
+
 module.exports = router;
