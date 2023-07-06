@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const picture = require("../models/picture.model");
+const Picture = require("../models/Picture.model");
 const fileUploader = require("../config/cloudinary.config");
 
 router.get("/picture/create", (req, res) => res.render("gallery"));
