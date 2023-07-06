@@ -1,0 +1,22 @@
+{{! views/movie-views/movie-create.hbs }}
+
+<h2>Create a User Profile</h2>
+<div class="row">
+  <div class="col-md-6">
+    <form
+      action="/userpicture/create"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      {{! !!! }}
+
+      <div class="form-group">
+        <label>New profile picture:
+          <input type="file" name="userpicture" class="form-control-file" />
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+  </div>
+</div>

@@ -1,14 +1,14 @@
-
 // models/picture.model.js
 
 const { Schema, model } = require("mongoose");
 
 const pictureSchema = new Schema(
   {
+    imageUrl: String,
     title: String,
     description: String,
     location: String,
-    author: String,
+    author: { type: Schema.Types.ObjectId, userSchema: "User" },
     rating: Number,
   },
   {
