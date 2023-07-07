@@ -1,10 +1,12 @@
 {{#each picture}}
   <h1>{{title}}</h1>
   <hr />
-  <img src="{{imageUrl}}" alt="{{description}}" />
-  <p>Author: {{author}}</p>
-  <p>Description: {{description}}</p>
-  <p>Rating: {{rating}}/10</p>
+  <div class="picture">
+    <img src="{{imageUrl}}" alt="{{description}}" />
+    <p>Author: {{author}}</p>
+    <p>Description: {{description}}</p>
+    <p>Rating: {{rating}}/10</p>
+  </div>
   <hr />
 
 {{/each}}
