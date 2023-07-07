@@ -11,6 +11,13 @@
           <h5 class="card-title">{{title}}</h5>
           <p class="card-text">{{description}}</p>
           <a href="/picture/{{id}}/edit" class="btn btn-primary">Edit</a>
+          <h3>{{title}}</h3>
+          <p>By: {{author}}</p>
+          <a href="/picture/{{_id}}">See details</a>
+          <a href="/picture/{{_id}}/edit">Edit</a>
+          <form action="/picture/{{_id}}/delete" method="POST">
+            <button>Delete</button>
+          </form>
         </div>
       </div>
     </div>
