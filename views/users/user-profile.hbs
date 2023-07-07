@@ -2,18 +2,19 @@
 {{! the new version, with the session: }}
 <div id="profile-info">
   <div id="user-profile">
-  {{#if userInSession}}
-    <h2>Welcome, {{userInSession.username}}!</h2>
-    <img src="{{userInSession.profilePhoto}}" />
-    <p>This is your profile page my friend!</p>
 
-    <br>
-<button>
-    <div><a class="nav-link" href="/userpicture/create">Add profile picture</a></div>
+
+{{#if userInSession}}
+  <h2>Welcome, {{userInSession.username}}!</h2>
+  <img class="profile" src="{{userInSession.profilePhoto}}" />
+  <p>This is your profile page my friend!</p>
+
+
+  <div>
+    <button><a class="nav-link" href="/userpicture/create">add profile picture</a></div>
 </button>
-<br>
-    <div>
-      </div>
+  <div>
+
       {{! create picture.hbs }}
 <div id="create-picture">
       <h2 id="banner-text">Create picture</h2>

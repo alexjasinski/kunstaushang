@@ -33,6 +33,22 @@ nav {
   color: #fff;
   padding: 10px;
 }
+/* form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  height: 100vh; /* Adjust the height as per your requirements 
+} */
+
+/* Optional: Center align form inputs */
+form input,
+form select,
+form textarea {
+  margin-bottom: 10px;
+  text-align: center;
+}
 
 nav ul {
   list-style-type: none;
@@ -67,7 +83,7 @@ p {
 
 .slideshow-container {
   position: relative;
-  height: 500px;
+  height: 70vh;
 }
 
 .slide {
@@ -84,12 +100,12 @@ p {
   opacity: 1;
 }
 .sidebar {
-  width: 200px; /* Adjust as needed */
+  width: 20px; /* Adjust as needed */
   background-color: red; /* Adjust sidebar color */
   position: fixed;
   top: 0;
   bottom: 0;
-  left: -200px; /* Hide the sidebar initially */
+  left: -20px; /* Hide the sidebar initially */
   transition: left 0.3s ease;
 }
 
@@ -107,6 +123,39 @@ footer {
   color: #fff;
   padding: 10px;
   text-align: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+}
+
+.gallery img {
+  object-fit: cover;
+  width: 40em;
+  height: 25em;
+}
+
+.picture div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile {
+  width: 200px;
 }
 
 #profile-info {
@@ -132,12 +181,12 @@ footer {
 #submitgt {
   display: flex;
   justify-content: center;
-  background-color: green;
+  background-color: 009fe1;
 }
 
 .nav-link {
   text-decoration: none;
-  color: green;
+  color: white;
 }
 
 input::file-selector-button,
@@ -163,21 +212,40 @@ input::file-selector-button:hover {
   transform: scale(1.1);
 }
 
+
 #gallery-container {
   display: block;
   justify-content: center;
   background-color: black;
 }
 
-#gallery-section {
-  display: flex;
-  justify-content: center;
-  background-color: black;
-}
+#gallery-section,
+#form-control-file {
 
 #img-description {
   display: flex;
   justify-content: center;
+}
+
+.picture-container {
+  display: flex;
+  align-items: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.create-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#about-container {
+  text-align: center;
+}
+
+#features-list {
+  display: flex;
 }
 
 .gallery {
