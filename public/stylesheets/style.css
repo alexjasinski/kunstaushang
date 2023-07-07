@@ -226,7 +226,7 @@ input::file-selector-button:hover {
 .picture-container {
   display: flex;
   align-items: center;
-  align-items: center;
+  justify-content: center;
   flex-direction: column;
 }
 
