@@ -1,6 +1,11 @@
-{{! views/users/user-profile.hbs }}
-
+ <link rel="stylesheet" href="/stylesheets/userprofile.css" />
 {{! the new version, with the session: }}
+<div id="profile-info">
+  <div id="user-profile">
+  {{#if userInSession}}
+    <h2>Welcome, {{userInSession.username}}!</h2>
+    <img src="{{userInSession.profilePhoto}}" />
+    <p>This is your profile page my friend!</p>
 
 {{#if userInSession}}
   <h2>Welcome, {{userInSession.username}}!</h2>
@@ -65,13 +70,83 @@
 
           <button type="submit" class="btn btn-primary">Create</button>
         </form>
+    <br>
+<button>
+    <div><a class="nav-link" href="/userpicture/create">Add profile picture</a></div>
+</button>
+<br>
+    <div>
       </div>
+      {{! create picture.hbs }}
+<div id="create-picture">
+      <h2 id="banner-text">Create picture</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <form
+            action="/picture/create"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            {{! !!! }}
+            <div class="form-group">
+              <label>Title:
+                <input type="text" name="title" class="form-control" />
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label>Author:
+                <textarea name="author" cols="30" rows="4" class="form-control">
+                </textarea>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label>Description:
+                <textarea
+                  name="description"
+                  cols="30"
+                  rows="4"
+                  class="form-control"
+                > </textarea>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label>Location:
+                <textarea
+                  name="location"
+                  cols="30"
+                  rows="4"
+                  class="form-control"
+                >
+                </textarea>
+              </label>
+            </div>
+
+            <div class="center-group">
+              <label class="btn-label">Upload image:
+                </label></div>
+                <div class="form-group">
+                <input type="file" name="picture" class="hidden" />
+                </div>
+              </label>
+            </div>
+            <div class="center-group">
+                <label class="btn-label">Submit created picture here: </label></div>
+            <div id="submitgt"><button type="submit" class="btn btn-primary">submit</button></div>
+                
+          </form>
+        </div>
+      </div>
+
+    </div>
     </div>
 
-  </div>
+  {{else}}
 
-{{else}}
+    <br /><p>Still no logged in user, sorry!</p>
 
-  <br /><p>Still no logged in user, sorry!</p>
+  {{/if}}
 
-{{/if}}
+</div>
