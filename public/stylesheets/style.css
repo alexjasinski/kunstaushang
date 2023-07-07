@@ -181,12 +181,12 @@ footer {
 #submitgt {
   display: flex;
   justify-content: center;
-  background-color: green;
+  background-color: 009fe1;
 }
 
 .nav-link {
   text-decoration: none;
-  color: green;
+  color: white;
 }
 
 input::file-selector-button,
@@ -212,6 +212,16 @@ input::file-selector-button:hover {
   transform: scale(1.1);
 }
 
+
+#gallery-container {
+  display: block;
+  justify-content: center;
+  background-color: black;
+}
+
+#gallery-section,
+#form-control-file {
+
 #img-description {
   display: flex;
   justify-content: center;
@@ -222,4 +232,18 @@ input::file-selector-button:hover {
   align-items: center;
   align-items: center;
   flex-direction: column;
+}
+
+.create-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#about-container {
+  text-align: center;
+}
+
+#features-list {
+  display: flex;
 }
