@@ -1,13 +1,10 @@
 
-<h1>GALLERY</h1>
-<div>
+<section id="gallery-section">
+<div id="search-container">
+  {{> searchBar}}
   {{#each images}}
     <img src="{{urls.small}}" alt="{{this.alt_description}}" />
-    <p>{{this.alt_description}}</p>
+    <p id="img-description">{{this.alt_description}}</p>
   {{/each}}
 </div>
-<div class="container">
-  {{> searchBar}}
-
-
-</div>
+</section>
