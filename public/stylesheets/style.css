@@ -247,3 +247,31 @@ input::file-selector-button:hover {
 #features-list {
   display: flex;
 }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+}
+
+.gallery img {
+  object-fit: cover;
+  width: 40em;
+  height: 25em;
+}
+.picture {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
