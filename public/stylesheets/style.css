@@ -33,14 +33,14 @@ nav {
   color: #fff;
   padding: 10px;
 }
-form {
+/* form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 
-  height: 100vh; /* Adjust the height as per your requirements */
-}
+  height: 100vh; /* Adjust the height as per your requirements 
+} */
 
 /* Optional: Center align form inputs */
 form input,
@@ -83,7 +83,7 @@ p {
 
 .slideshow-container {
   position: relative;
-  height: 500px;
+  height: 70vh;
 }
 
 .slide {
@@ -146,6 +146,7 @@ footer {
   width: 40em;
   height: 25em;
 }
+
 .picture div {
   display: flex;
   flex-wrap: wrap;
@@ -211,19 +212,14 @@ input::file-selector-button:hover {
   transform: scale(1.1);
 }
 
-#gallery-container {
-  display: block;
-  justify-content: center;
-  background-color: black;
-}
-
-#gallery-section {
-  display: flex;
-  justify-content: center;
-  background-color: black;
-}
-
 #img-description {
   display: flex;
   justify-content: center;
+}
+
+.picture-container {
+  display: flex;
+  align-items: center;
+  align-items: center;
+  flex-direction: column;
 }

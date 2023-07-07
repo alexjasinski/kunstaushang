@@ -2,81 +2,19 @@
 {{! the new version, with the session: }}
 <div id="profile-info">
   <div id="user-profile">
-  {{#if userInSession}}
-    <h2>Welcome, {{userInSession.username}}!</h2>
-    <img src="{{userInSession.profilePhoto}}" />
-    <p>This is your profile page my friend!</p>
+
 
 {{#if userInSession}}
   <h2>Welcome, {{userInSession.username}}!</h2>
   <img class="profile" src="{{userInSession.profilePhoto}}" />
   <p>This is your profile page my friend!</p>
-  <button>
 
-    <a href="/userProfile">Reload the page</a>
-  </button>
 
   <div>
     <button><a class="nav-link" href="/userpicture/create">add profile picture</a></div>
 </button>
   <div>
-    {{! create picture.hbs }}
 
-    <h2>Create picture</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <form
-          action="/picture/create"
-          method="post"
-          enctype="multipart/form-data"
-        >
-          {{! !!! }}
-          <div class="form-group">
-            <label>Title:
-              <input type="text" name="title" class="form-control" />
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label>Author:
-              <textarea name="author" cols="30" rows="4" class="form-control">
-              </textarea>
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label>Description:
-              <textarea
-                name="description"
-                cols="30"
-                rows="4"
-                class="form-control"
-              > </textarea>
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label>Location:
-              <textarea name="location" cols="30" rows="4" class="form-control">
-              </textarea>
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label>Image:
-              <input type="file" name="picture" class="form-control-file" />
-            </label>
-          </div>
-
-          <button type="submit" class="btn btn-primary">Create</button>
-        </form>
-    <br>
-<button>
-    <div><a class="nav-link" href="/userpicture/create">Add profile picture</a></div>
-</button>
-<br>
-    <div>
-      </div>
       {{! create picture.hbs }}
 <div id="create-picture">
       <h2 id="banner-text">Create picture</h2>
