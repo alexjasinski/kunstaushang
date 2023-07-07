@@ -1,34 +1,62 @@
-// ℹ️ Gets access to environment variables/settings
-// https://www.npmjs.com/package/dotenv
 require("dotenv").config();
 
-// ℹ️ Connects to the database
 require("./db");
+
+const path = require("path");
 
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express
+
 const express = require("express");
 
-// Handles the handlebars
-// https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
+const emoji = require("emojilib");
 
 const app = express();
+require("./config/session.config")(app);
 
-// ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
-// default value for title local
 const capitalize = require("./utils/capitalize");
 const projectName = "kunstaushang";
 
 app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 
-// 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 
+// pictureRouter needs to be added so paste the following lines:
+const pictureRouter = require("./routes/picture.routes"); // <== has to be added
+app.use("/", pictureRouter); // <== has to be added
+
+const authRouter = require("./routes/auth.routes"); // <== has to be added
+app.use("/", authRouter); // <== has to be added
+
+const galleryRoutes = require("./routes/gallery.routes");
+app.use("/", galleryRoutes);
+
+const userpictureRoutes = require("./routes/userpicture.routes");
+app.use("/", userpictureRoutes);
+
+const searchRoutes = require("./routes/search.routes");
+app.use("/", searchRoutes);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "views/index.html"));
+});
+
+app.get("/gallery", (req, res, next) => {
+  res.render("gallery");
+});
+
+app.get("/search", (req, res, next) => res.render("/partials/searchBar"));
+
+app.set("view engine", "hbs");
+app.set("views", path.join(__dirname, "views"));
+
+hbs.registerPartials(__dirname + "/views/partials");
 
 module.exports = app;
