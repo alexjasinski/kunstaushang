@@ -7,6 +7,7 @@ const fileUploader = require("../config/cloudinary.config");
 const User = require("../models/User.model");
 
 // GET route to display the form to create a new movie
+
 router.get("/userpicture/create", (req, res) =>
   res.render("userpicture-views/userpicture-create")
 );
