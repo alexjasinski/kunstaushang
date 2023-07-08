@@ -23,6 +23,11 @@ header {
   padding: 20px;
 }
 
+#map {
+  height: 250px;
+  width: 100%;
+}
+
 h1 {
   font-size: 24px;
   margin-bottom: 10px;
@@ -83,7 +88,7 @@ p {
 
 .slideshow-container {
   position: relative;
-  height: 70vh;
+  height: 55vh;
 }
 
 .slide {
@@ -94,6 +99,7 @@ p {
   height: 100%;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  object-fit: cover
 }
 
 .slide.active {
