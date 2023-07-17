@@ -1,25 +1,27 @@
-{{!-- views/books/book-create.hbs --}}
+{{! views/books/book-create.hbs }}
 
 <h2>Upload your image</h2>
 
 <form action="/gallery/create" method="post">
-  <label> Title:
+  <label>
+    Title:
     <input type="text" name="title" />
   </label>
 
-  <label> Author:
+  <label>
+    Author:
     <input type="text" name="author" />
   </label>
 
-  <label> Description:
+  <label>
+    Description:
     <textarea name="description" cols="30" rows="4"> </textarea>
   </label>
 
-  <label> Rating:
+  <label>
+    Rating:
     <input type="number" name="rating" min="1" max="10" />
   </label>
-
-  
 
   <button type="submit"> Create </button>
 </form>
